@@ -1,5 +1,6 @@
 package com.Bykanov.Gleb.domain.entity;
-import jakarta.persistence.*;
+import javax.persistence.*;
+
 @Entity
 @Table(name = "student")
 public class Student {
