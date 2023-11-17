@@ -17,7 +17,7 @@ public class MainController {
     @Autowired
     private StudentRepo studentRepo;
 
-    @GetMapping("")
+    @GetMapping("/")
     public String greeting(@RequestParam(name="name",
             required = false, defaultValue = "World") String name, Model model)
     {
