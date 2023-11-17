@@ -23,7 +23,8 @@ public class User implements UserDetails {
     @JoinColumn(name = "studenuser")
     private User studentuser;
 
-
+    private String email;
+    private String activationCode;
 
     public void setStudentuser(User studentuser) {
         this.studentuser = studentuser;
@@ -36,11 +37,16 @@ public class User implements UserDetails {
 
     public boolean isAdmin() {return roles.contains( Role.ADMIN );}
 
-    public User(String username, String password, boolean active, Set<Role> roles) {
+
+
+
+    public User(String username, String password, boolean active, Set<Role> roles, String email, String activationCode) {
         this.username = username;
         this.password = password;
         this.active = active;
         this.roles = roles;
+        this.email = email;
+        this.activationCode = activationCode;
     }
     public User()
     {}
@@ -109,5 +115,21 @@ public class User implements UserDetails {
 
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getActivationCode() {
+        return activationCode;
+    }
+
+    public void setActivationCode(String activationCode) {
+        this.activationCode = activationCode;
     }
 }
